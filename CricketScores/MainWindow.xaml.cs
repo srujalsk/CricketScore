@@ -24,13 +24,11 @@ using System.ComponentModel;
 namespace CricketScores
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Code Developed By Srujal S. Kachhela
+    /// E-Mail: srujal.k@gmail.com
     /// </summary>
     public partial class MainWindow : Window
     {
-
-
-
         public static ObservableCollection<String> Scores = new ObservableCollection<String>();
         public static ObservableCollection<String> tmp_list = new ObservableCollection<String>();
         public BackgroundWorker bw;
@@ -44,19 +42,7 @@ namespace CricketScores
         {
             InitializeComponent();
             List1.ItemsSource = Scores;
-            //Items.CollectionChanged += Items_CollectionChanged;
-            //Scores.Add("a");
-            //Scores.Add("a");
-            //Scores.Add("a");
-            //List1.SourceUpdated += List1_SourceUpdated;
-            //List1.TargetUpdated += List1_TargetUpdated;
-            
-            //loop_results();
         }
-
-       
-
-
 
         public XmlDocument MakeRequest(string requestUrl)
         {
@@ -107,20 +93,8 @@ namespace CricketScores
             return ll;
         }
 
-        public void loop_results()
-        {
-            //List<String> ll;
-            /*for (; ; )
-            {
-                XmlDocument xdoc = MakeRequest("http://static.cricinfo.com/rss/livescores.xml");
-                get_list(xdoc);
-            }*/
-        }
-
         private void List1_Loaded(object sender, RoutedEventArgs e)
         {
-            //Thread t1 = new Thread(new ThreadStart(loop_results));
-            //t1.Start();
             XmlDocument xdoc = MakeRequest("http://static.cricinfo.com/rss/livescores.xml");
             Scores = get_list(xdoc);
             List1.ItemsSource = Scores;
