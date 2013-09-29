@@ -45,14 +45,6 @@ namespace CricketScores
         {
             InitializeComponent();
             List1.ItemsSource = Scores;
-            //Items.CollectionChanged += Items_CollectionChanged;
-            //Scores.Add("a");
-            //Scores.Add("a");
-            //Scores.Add("a");
-            //List1.SourceUpdated += List1_SourceUpdated;
-            //List1.TargetUpdated += List1_TargetUpdated;
-            
-            //loop_results();
         }
 
        
@@ -72,8 +64,6 @@ namespace CricketScores
                         "Server error (HTTP {0}: {1}).",
                         response.StatusCode,
                         response.StatusDescription));
-                    
-                    //var objResponse = (HttpWebResponse) response.GetResponseStream();
                     XmlDocument xdoc = new XmlDocument();
                     xdoc.Load(response.GetResponseStream());
                     return xdoc;
@@ -108,20 +98,8 @@ namespace CricketScores
             return ll;
         }
 
-        public void loop_results()
-        {
-            //List<String> ll;
-            /*for (; ; )
-            {
-                XmlDocument xdoc = MakeRequest("http://static.cricinfo.com/rss/livescores.xml");
-                get_list(xdoc);
-            }*/
-        }
-
         private void List1_Loaded(object sender, RoutedEventArgs e)
         {
-            //Thread t1 = new Thread(new ThreadStart(loop_results));
-            //t1.Start();
             XmlDocument xdoc = MakeRequest("http://static.cricinfo.com/rss/livescores.xml");
             Scores = get_list(xdoc);
             List1.ItemsSource = Scores;
