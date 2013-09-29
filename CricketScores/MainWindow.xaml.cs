@@ -24,7 +24,8 @@ using System.ComponentModel;
 namespace CricketScores
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Code by Srujal S. Kachhela
+    /// E-Mail: srujal.k@gmail.com
     /// </summary>
     public partial class MainWindow : Window
     {
